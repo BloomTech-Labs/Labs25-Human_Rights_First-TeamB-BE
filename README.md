@@ -105,3 +105,5 @@ the CLI prior to commiting code in the following ways:
 - `npm run format` to apply the standards defined by eslint/prettier config.
 
 Alternatively you can install plugins for your editor of choice.
+
+- [x] Test Pull
