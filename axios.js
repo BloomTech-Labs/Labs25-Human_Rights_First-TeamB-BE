@@ -10,9 +10,10 @@ function axiFunc() {
   axios
     .get('https://api.846policebrutality.com/api/incidents')
     .then((response) => {
-      data = JSON.stringify(response.data.data);
+      data = response.data.data;
       // console.log('this is the then', data);
-      // return response.data.data;
+      console.log(data)
+      // return data;
 
       // console.log(response.data.data);
     })
@@ -37,4 +38,5 @@ function axiFunc() {
 //     console.log(error);
 //   });
 
-console.log(data);
+axiFunc()
+console.log(data)
