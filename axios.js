@@ -2,41 +2,46 @@ const axios = require('axios');
 
 module.exports = {
   axiFunc,
+  dataFunc,
 };
 
-let data = [];
+let data;
+
+// Direct API Call
 function axiFunc() {
-  // Direct API Call
   axios
     .get('https://api.846policebrutality.com/api/incidents')
     .then((response) => {
       data = response.data.data;
-      // console.log('this is the then', data);
-      console.log(data)
-      // return data;
-
-      // console.log(response.data.data);
+      // console.log(data)
+      return response.data.data;
     })
     .catch((error) => {
       console.log('this is an error', error);
       return 'This is broken';
     });
-  // .finally(() => {
-  //   // console.log('this is the finally');
-  //   // console.log(data);
-  //   return data;
-  // })
 }
 
 // Data Science Call
-// axios
-//   .get('')
-//   .then((response) => {
-//     console.log(response.data);
-//   })
-//   .catch((error) => {
-//     console.log(error);
-//   });
+function dataFunc() {
+  axios
+    .get(
+      'http://hrf-teamb.eba-3253gq3h.us-east-1.elasticbeanstalk.com/getdata?pullnum=1'
+    )
+    .then((response) => {
+      data = response.data;
+      // console.log(data);
+      return response.data;
+    })
+    .catch((error) => {
+      console.log('DS is an error', error);
+      return 'This is broken';
+    });
+}
 
-axiFunc()
-console.log(data)
+// axiFunc();
+// dataFunc()
+
+console.log('Axi: ', axiFunc());
+console.log('Science: ', dataFunc());
+console.log('Data: ', data);
