@@ -22,49 +22,27 @@ function axiFunc() {
 
 // Data Science Call
 function dataFunc() {
-<<<<<<< HEAD
+  // var help = "please give me data";
+  // return help;
   axios
     .get(
       'http://hrf-teamb.eba-3253gq3h.us-east-1.elasticbeanstalk.com/getdata?pullnum=10'
     )
-    .then((response) => {
-      data = response.data;
-      console.log(JSON.parse(data));
-      // return response.data;
+    .then((res) => {
+      console.log(res); // Data is available here!
+      // From here Call your model and save the data into your database
     })
-    .catch((error) => {
-      console.log('DS is an error', error);
-      return 'This is broken';
+    .catch((err) => {
+      console.log(err);
     });
-}
 
-// axiFunc();
-dataFunc();
-
-// console.log('Axi: ', axiFunc());
-// console.log('Science: ', dataFunc());
-// console.log('Data: ', data);
-=======
-
-// var help = "please give me data";
-// return help;
-  axios.get('http://hrf-teamb.eba-3253gq3h.us-east-1.elasticbeanstalk.com/getdata?pullnum=10')
-  .then( (res) => {
-    console.log(res)  // Data is available here!
-    // From here Call your model and save the data into your database
-  })
-  .catch( (err) => {
-    console.log(err)
-  })
-
-
-// async function dataFunc() {
-//   const { data } = await axios.get(
-//     'http://hrf-teamb.eba-3253gq3h.us-east-1.elasticbeanstalk.com/getdata?pullnum=10'
-//   );
-//   const jData = JSON.parse(data);
-//   console.log(jData);
-//   return jData;
+  // async function dataFunc() {
+  //   const { data } = await axios.get(
+  //     'http://hrf-teamb.eba-3253gq3h.us-east-1.elasticbeanstalk.com/getdata?pullnum=10'
+  //   );
+  //   const jData = JSON.parse(data);
+  //   console.log(jData);
+  //   return jData;
 
   // async function dataFunc() {
   //   var get = await axios.get('http://hrf-teamb.eba-3253gq3h.us-east-1.elasticbeanstalk.com/getdata?pullnum=10')
@@ -105,4 +83,3 @@ var data = dataFunc();
 // console.log('Axi: ', axiFunc());
 // console.log('Science: ', dataFunc());
 console.log('Data: ', data);
->>>>>>> 1821d236f80d30b75fe4cd9cb609ed3f3702f9ca
