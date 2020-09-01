@@ -21,18 +21,27 @@ function axiFunc() {
 }
 
 // Data Science Call
-// function dataFunc() {
+function dataFunc() {
 
 // var help = "please give me data";
 // return help;
+  axios.get('http://hrf-teamb.eba-3253gq3h.us-east-1.elasticbeanstalk.com/getdata?pullnum=10')
+  .then( (res) => {
+    console.log(res)  // Data is available here!
+    // From here Call your model and save the data into your database
+  })
+  .catch( (err) => {
+    console.log(err)
+  })
 
-async function dataFunc() {
-  const { data } = await axios.get(
-    'http://hrf-teamb.eba-3253gq3h.us-east-1.elasticbeanstalk.com/getdata?pullnum=10'
-  );
-  const jData = JSON.parse(data);
-  console.log(jData);
-  return jData;
+
+// async function dataFunc() {
+//   const { data } = await axios.get(
+//     'http://hrf-teamb.eba-3253gq3h.us-east-1.elasticbeanstalk.com/getdata?pullnum=10'
+//   );
+//   const jData = JSON.parse(data);
+//   console.log(jData);
+//   return jData;
 
   // async function dataFunc() {
   //   var get = await axios.get('http://hrf-teamb.eba-3253gq3h.us-east-1.elasticbeanstalk.com/getdata?pullnum=10')
