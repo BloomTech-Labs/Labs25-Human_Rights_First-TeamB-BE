@@ -1,4 +1,4 @@
-const db = require(../../config/dsConfig.js); //I don't know why it's yelling at me but it's gonna have a bad day
+const db = require('../../config/dsConfig.js');
 // const axi = require(../../axios.js)
 const axios = require('axios');
 
