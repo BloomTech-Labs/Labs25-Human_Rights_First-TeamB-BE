@@ -1,5 +1,5 @@
 const axios = require('axios');
-const file = require('./data/incidents.json')
+// const file = require('./data/incidents.json');
 
 module.exports = {
   axiFunc,
@@ -36,6 +36,4 @@ function dataFunc() {
     .catch((err) => {
       console.log(err);
     });
-
-  
 }
