@@ -2,7 +2,7 @@ exports.up = function (knex) {
   return knex.schema.createTable('data', (tbl) => {
     tbl.increments('id').notNullable();
     tbl.string('eventId').notNullable().unique();
-    tbl.JSON('event').notNullable();
+    tbl.json('event').notNullable();
   });
   // .createTable('cities', (table) => {
   //   table.increments('id');
@@ -69,8 +69,8 @@ exports.up = function (knex) {
 
 exports.down = function (knex) {
   return knex.schema.dropTableIfExists('data');
-  // .dropTableIfExists('tags')
   // .dropTableIfExists('event_tags')
+  // .dropTableIfExists('tags')
   // .dropTableIfExists('links')
   // .dropTableIfExists('geocode')
   // .dropTableIfExists('events')
