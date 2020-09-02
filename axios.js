@@ -39,13 +39,3 @@ function dataFunc() {
 
   
 }
-// console.log('File: ', file[data]);
-function fileRead(){
-  file.data.forEach(item => {
-    id: count += 1,
-    eventId: item.id,
-    event: item
-  })
-}
-
-fileRead();
