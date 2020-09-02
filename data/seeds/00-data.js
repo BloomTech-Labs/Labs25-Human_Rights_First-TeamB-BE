@@ -1,13 +1,13 @@
 const file = require('../incidents.json');
 exports.seed = function (knex) {
   // Deletes ALL existing entries
-  let count = 0;
-  return knex('table_name')
+  return knex('data')
     .truncate()
     .then(function () {
       // Inserts seed entries
       file.data.forEach((item) => {
-        return knex('table_name').insert([
+        let count = 0;
+        return knex('data').insert([
           {
             id: (count += 1),
             eventId: item.id,
@@ -17,4 +17,4 @@ exports.seed = function (knex) {
       });
     });
 };
-console.log(file);
+// console.log(file.data);
