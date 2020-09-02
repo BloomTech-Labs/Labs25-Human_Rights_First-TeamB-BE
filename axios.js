@@ -27,7 +27,7 @@ function dataFunc() {
 // return help;
   axios.get('http://hrf-teamb.eba-3253gq3h.us-east-1.elasticbeanstalk.com/getdata?pullnum=10')
   .then( (res) => {
-    console.log(res)  // Data is available here!
+    console.log(JSON.parse(res.data))  // Data is available here!
     // From here Call your model and save the data into your database
   })
   .catch( (err) => {
@@ -77,8 +77,8 @@ function dataFunc() {
 }
 
 // var data = axiFunc();
-var data = dataFunc();
+dataFunc();
 
 // console.log('Axi: ', axiFunc());
 // console.log('Science: ', dataFunc());
-console.log('Data: ', data);
+// console.log('Data: ', data);
