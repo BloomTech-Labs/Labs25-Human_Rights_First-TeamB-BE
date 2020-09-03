@@ -6,9 +6,9 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
   todo
-    .get()
-    .then((stuff) => {
-      res.status(200).json(stuff);
+    .getTable()
+    .then((resData) => {
+      res.status(200).json(resData);
     })
     .catch((error) => {
       console.log(error);

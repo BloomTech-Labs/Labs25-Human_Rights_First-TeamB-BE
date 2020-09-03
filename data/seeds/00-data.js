@@ -5,16 +5,18 @@ exports.seed = function (knex) {
     .truncate()
     .then(function () {
       // Inserts seed entries
-      file.data.forEach((item) => {
-        let count = 0;
-        return knex('data').insert([
-          {
-            id: (count += 1),
-            eventId: item.id,
-            event: item,
-          },
-        ]);
-      });
+      return knex('data').insert(getData());
     });
 };
-// console.log(file.data);
+
+function getData() {
+  const arr = [];
+  const data = file.data;
+  for (let item in data) {
+    arr.push({
+      eventId: data[item].id,
+      event: data[item],
+    });
+  }
+  return arr;
+}
