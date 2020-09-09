@@ -18,4 +18,3 @@ function getData() {
   }
   return arr;
 }
-// DS API: http://hrf-teamb.eba-3253gq3h.us-east-1.elasticbeanstalk.com/getdata?
