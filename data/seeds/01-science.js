@@ -5,7 +5,13 @@ exports.seed = function (knex) {
   return knex('data')
     .truncate()
     .then(function () {
-      return knex('data').insert(getSci());
+      return knex('data').insert([
+        // getSci()
+        {
+          eventId: 'test',
+          event: { key: 'value' },
+        },
+      ]);
     });
 };
 
