@@ -18,13 +18,13 @@ function getSci() {
       // console.log(res)
       var sci = JSON.parse(res.data);
       // console.log(sci)
-      if (sci.id != db.eventId) {
-        const obj = {
-          eventId: sci.id,
-          event: sci,
-        };
-        return obj;
-      }
+      // if (sci.id != db.eventId) {
+      const obj = {
+        eventId: sci.id,
+        event: sci,
+      };
+      return obj;
+      // }
     })
     .catch((err) => {
       console.log(err);
