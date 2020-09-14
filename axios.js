@@ -9,17 +9,26 @@ function axiData() {
   )
   .then((res) => {
       //sci is arr
-    var sci = JSON.parse(res.data);
-    // console.log(sci)
-    //datum is obj
-    for (i in sci){
-        // console.log("yay!", sci[i])
-        eventObj = {
-            eventId: sci[i].id,
-            event: sci[i]
+    // var sci = JSON.parse(res.data);
+    // // console.log(sci)
+    // //datum is obj
+    // for (i in sci){
+    //     // console.log("yay!", sci[i])
+    //     eventObj = {
+    //         eventId: sci[i].id,
+    //         event: sci[i]
+    //     }
+    //     // console.log("boo!", eventObj)
+    //     model.add(eventObj)
+    //     // console.log("three!!", eventObj)
+
+    testObj = {
+        eventId: "test",
+        event: {
+            id: "test",
+            test: "value"}
         }
-        model.add(eventObj)
-    }
+        model.add(testObj)
   })
   .catch((err) => {
     console.log(err);
