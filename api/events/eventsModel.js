@@ -11,5 +11,8 @@ function getTable() {
 function add(event) {
   console.log("I'm an event!!", event)
   return db('data as d')
-    .insert(event)
+    .insert({
+      eventId: event.eventId,
+      event: event.event
+    })
 }
