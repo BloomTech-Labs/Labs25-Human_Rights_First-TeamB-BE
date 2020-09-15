@@ -15,10 +15,11 @@ function add(event) {
       console.log('We did it! We saved the town!');
     })
     .catch((err) => {
-      if (
-        err.message.includes('duplicate key value violates unique constraint')
-      ) {
-        console.log('Duplicate Event ID Detected!');
-      }
+      // if (
+      //   err.message.includes('duplicate key value violates unique constraint')
+      // ) {
+      //   console.log('Duplicate Event ID Detected!');
+      // }
+      console.log(err);
     });
 }
