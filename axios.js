@@ -18,4 +18,3 @@ function axiData() {
       console.log('axios error', err);
     });
 }
-axiData();
