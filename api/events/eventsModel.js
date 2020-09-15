@@ -12,9 +12,11 @@ function add(event) {
   // console.log("I'm an event!!", event);
   return db('data')
     .insert(event)
-    .then(([newEvent]) => {
-    return newEvent
- }).catch((err) => {
-   console.log(err)
- })
+    .then(() => {
+      console.log('We did it! We saved the town!');
+      // return newEvent;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 }
