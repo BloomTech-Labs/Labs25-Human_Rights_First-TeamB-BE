@@ -20,6 +20,6 @@ function add(event) {
       // ) {
       //   console.log('Duplicate Event ID Detected!');
       // }
-      console.log(err);
+      console.log('Shit', err);
     });
 }
