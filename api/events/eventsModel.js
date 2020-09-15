@@ -12,7 +12,9 @@ function add(event) {
   // console.log("I'm an event!!", event);
   return db('data')
     .insert(event)
-    .then((res) => {
-    res.json({ success: true, message: 'ok' });     // respond back to request
+    .then(([newEvent]) => {
+    return newEvent
+ }).catch((err) => {
+   console.log(err)
  })
 }
