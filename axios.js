@@ -4,14 +4,13 @@ const model = require('./api/events/eventsModel');
 function axiData() {
   axios
     .get('http://hrf-teamb.eba-3253gq3h.us-east-1.elasticbeanstalk.com/getdata')
-    .then((res) => {
+    .then(async (res) => {
       var sci = JSON.parse(res.data);
       for (let i in sci) {
         var eventObj = {
           eventId: sci[i].id,
           event: sci[i],
         };
-        // setTimeout(model.add(eventObj), 10000);
         model.add(eventObj);
       }
     })
