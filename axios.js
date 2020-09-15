@@ -11,6 +11,7 @@ function axiData() {
           eventId: sci[i].id,
           event: sci[i],
         };
+        // setTimeout(model.add(eventObj), 10000);
         model.add(eventObj);
       }
     })
@@ -18,4 +19,4 @@ function axiData() {
       console.log('axios error', err);
     });
 }
-// setTimeout(axiData(), 10000);
+axiData();

@@ -1,12 +1,12 @@
 const express = require('express');
-const axi = require('../../axios');
+// const axi = require('../../axios');
 
 const todo = require('./eventsModel');
 
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  axi.axiData();
+  // axi.axiData();
   todo
     .getTable()
     .then((resData) => {

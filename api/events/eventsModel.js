@@ -10,16 +10,19 @@ function getTable() {
 }
 function add(event) {
   return db('data')
-    .insert(event)
-    .then(() => {
-      console.log('We did it! We saved the town!');
+    .select()
+    .where('eventId', event.eventId)
+    .then((rows) => {
+      console.log('Start');
+      if (rows.length === 0) {
+        console.log('Success');
+        return db('data').insert(event);
+      } else {
+        console.log('Failure');
+        throw 'Duplicate ID Encountered';
+      }
     })
     .catch((err) => {
-      // if (
-      //   err.message.includes('duplicate key value violates unique constraint')
-      // ) {
-      //   console.log('Duplicate Event ID Detected!');
-      // }
-      console.log('Shit', err);
+      console.log(err);
     });
 }
