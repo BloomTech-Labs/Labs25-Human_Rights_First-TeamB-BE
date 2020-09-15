@@ -18,3 +18,4 @@ function axiData() {
       console.log('axios error', err);
     });
 }
+// setTimeout(axiData(), 10000);
