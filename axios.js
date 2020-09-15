@@ -8,7 +8,7 @@ function axiData() {
     .then((res) => {
       //   sci is arr
       var sci = JSON.parse(res.data);
-      console.log(sci);
+      // console.log(sci);
       //datum is obj
       for (let i in sci) {
         // console.log("yay!", sci[i])

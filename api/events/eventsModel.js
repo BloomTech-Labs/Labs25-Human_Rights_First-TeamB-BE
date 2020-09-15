@@ -10,5 +10,9 @@ function getTable() {
 }
 function add(event) {
   // console.log("I'm an event!!", event);
-  return db('data').insert(event);
+  return db('data')
+    .insert(event)
+    .then((res) => {
+    res.json({ success: true, message: 'ok' });     // respond back to request
+ })
 }
