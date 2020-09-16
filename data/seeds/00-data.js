@@ -1,4 +1,5 @@
 const file = require('../incidents.json');
+
 exports.seed = function (knex) {
   return knex('data')
     .truncate()
