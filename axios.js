@@ -6,7 +6,7 @@ function axiData() {
     .get('http://hrf-teamb.eba-3253gq3h.us-east-1.elasticbeanstalk.com/getdata')
     .then(async (res) => {
       if (res.data == '[]') {
-        console.log('No New Data');
+        console.log('\nNo New Data\n');
       } else {
         console.log(res.data);
         var sci = JSON.parse(res.data);
