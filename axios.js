@@ -8,7 +8,6 @@ function axiData() {
       if (res.data == '[]') {
         console.log('\nNo New Data\n');
       } else {
-        console.log(res.data);
         var sci = JSON.parse(res.data);
         for (let i in sci) {
           var eventObj = {
@@ -16,8 +15,8 @@ function axiData() {
             event: sci[i],
           };
           await model.add(eventObj);
-          console.log('model.add exited');
         }
+        process.exit(0);
       }
     })
     .catch((err) => {
