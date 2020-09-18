@@ -3,12 +3,11 @@ const model = require('./api/events/eventsModel');
 
 function axiData() {
   axios
-    .get('http://hrf-teamb.eba-3253gq3h.us-east-1.elasticbeanstalk.com/getdata')
+    .get(process.env.DS_API_URL)
     .then(async (res) => {
       if (res.data == '[]') {
         console.log('\nNo New Data\n');
       } else {
-        console.log(res.data);
         var sci = JSON.parse(res.data);
         for (let i in sci) {
           var eventObj = {
@@ -16,8 +15,8 @@ function axiData() {
             event: sci[i],
           };
           await model.add(eventObj);
-          console.log('model.add exited');
         }
+        process.exit(0);
       }
     })
     .catch((err) => {

@@ -13,13 +13,10 @@ function add(event) {
     .select()
     .where('eventId', event.eventId)
     .then((rows) => {
-      console.log('Start');
       if (rows.length === 0) {
-        console.log('Success');
         return db('data').insert(event);
       } else {
-        console.log('Failure');
-        throw 'Duplicate ID Encountered';
+        throw 'Error: Duplicate ID Encountered';
       }
     })
     .catch((err) => {
