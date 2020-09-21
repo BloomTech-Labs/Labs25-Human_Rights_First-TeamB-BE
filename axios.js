@@ -3,7 +3,7 @@ const model = require('./api/events/eventsModel');
 
 function axiData() {
   axios
-    .get(process.env.DS_API_URL)
+    .get('http://hrf-teamb.eba-3253gq3h.us-east-1.elasticbeanstalk.com/getdata')
     .then(async (res) => {
       if (res.data == '[]') {
         console.log('\nNo New Data\n');
