@@ -35,3 +35,15 @@ Event: {
 run `node axios.js` in the console/terminal
 
 It calls the API and then parses it into json before adding it to the Postgres database on Heroku
+
+If the data is NOT a duplicate, the console will log
+```
+Start
+Success
+```
+Otherwise it will log
+```
+Start
+Failure
+Duplicate ID Encountered
+```
