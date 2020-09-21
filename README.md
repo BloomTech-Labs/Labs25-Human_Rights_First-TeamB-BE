@@ -12,6 +12,8 @@ See .env.sample for example values
    - Node.js
    - Express.js
    - Knex.js
+   - PostreSQL
+   - CRON Scheduler
    
 ## Endpoints
 ### GET
@@ -29,3 +31,7 @@ Event: {
     description: an example at example example happened near example where example example
 }
 ```
+## GET Data Science data
+run `node axios.js` in the console/terminal
+
+It calls the API and then parses it into json before adding it to the Postgres database on Heroku
