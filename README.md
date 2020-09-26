@@ -1,6 +1,6 @@
 # Human Rights First - Incidents of Excessive Use of Force by Police
 
-[video presentation] (https://youtu.be/4Rk8fbLA0s0)
+[video presentation](https://youtu.be/4Rk8fbLA0s0)
 
 ### Enviornment Variables
 
